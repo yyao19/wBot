@@ -4,6 +4,7 @@ include/
 lib/
 .idea/
 *.pyc
+wxpy.pkl
 
 #System Files
 .DS_Store
