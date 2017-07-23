@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+bin/
+include/
+lib/
+.idea/
+*.pyc
+
+#System Files
+.DS_Store
+Thumbs.db
