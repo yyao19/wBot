@@ -67,6 +67,8 @@ class WBot(object):
                         text_msg = recalled_msg.sender.nick_name + u' 撤回了一条消息：' + recalled_msg.text
                     elif isinstance(msg.chat, Group):
                         text_msg = recalled_msg.raw.get('ActualNickName') + u' 撤回了一条消息：' + recalled_msg.text
+                    if len(text_msg) > config.MESSAGE_LENGTH:
+                        text_msg = text_msg[0:config.MESSAGE_LENGTH]
                     msg.reply(text_msg)
 
     def _search_message_by_id(self, message_id):
