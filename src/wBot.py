@@ -6,7 +6,7 @@ import re
 
 class WBot(object):
     def __init__(self):
-        self.bot = Bot(True)
+        self.bot = Bot(True, 2)
         self.bot.messages.max_history = config.MAX_HISTORY
         self.tuling = Tuling(api_key=config.TULING_API_KEY)
 
