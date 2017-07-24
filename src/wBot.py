@@ -32,6 +32,7 @@ class WBot(object):
             else:
                 ret = self.tuling.reply_text(msg, True)
                 ret = ret.replace(u'图灵机器人', self.bot.self.nick_name)
+                ret = self._message_truncation(ret)
                 msg.reply(ret)
 
     def auto_accept_friends(self):
@@ -67,8 +68,7 @@ class WBot(object):
                         text_msg = recalled_msg.sender.nick_name + u' 撤回了一条消息：' + recalled_msg.text
                     elif isinstance(msg.chat, Group):
                         text_msg = recalled_msg.raw.get('ActualNickName') + u' 撤回了一条消息：' + recalled_msg.text
-                    if len(text_msg) > config.MESSAGE_LENGTH:
-                        text_msg = text_msg[0:config.MESSAGE_LENGTH]
+                    text_msg = self._message_truncation(text_msg)
                     msg.reply(text_msg)
 
     def _search_message_by_id(self, message_id):
@@ -82,4 +82,16 @@ class WBot(object):
                 return msg
         return None
 
+    @staticmethod
+    def _message_truncation(msg):
+        """
+        消息长度截取，避免消息过长 产生炸群嫌疑
+        
+        :param msg: 
+        :return: 
+        """
+        message = u''
+        if msg and len(msg) > config.MESSAGE_LENGTH:
+            message = msg[0:config.MESSAGE_LENGTH] + u'...'
 
+        return message
