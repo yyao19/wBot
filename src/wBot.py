@@ -69,6 +69,8 @@ class WBot(object):
                     elif isinstance(msg.chat, Group):
                         text_msg = recalled_msg.raw.get('ActualNickName') + \
                                    u' 撤回了一条消息：' + self._message_truncation(recalled_msg.text)
+                    else:
+                        text_msg = recalled_msg.sender.nick_name + u' 撤回了一条消息'
                     msg.reply(text_msg)
 
     def _search_message_by_id(self, message_id):
@@ -90,8 +92,7 @@ class WBot(object):
         :param msg: 
         :return: 
         """
-        message = u''
         if msg and len(msg) > config.MESSAGE_LENGTH:
-            message = msg[0:config.MESSAGE_LENGTH] + u'...'
+            msg = msg[0:config.MESSAGE_LENGTH] + u'...'
+        return msg
 
-        return message
