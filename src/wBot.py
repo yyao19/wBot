@@ -163,7 +163,7 @@ class WBot(object):
         :return: 
         """
         puid = msg.sender.puid if msg.sender.puid else u'other'
-        path = u'attachment/' + msg_type.lower() + u'/' + puid
+        path = config.STORAGE_PATH + msg_type.lower() + u'/' + puid
         absolute_path = os.getcwd()
         if path:
             path_list = path.split(u'/')
