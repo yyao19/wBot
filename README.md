@@ -13,6 +13,9 @@ WECHAT BOT
 Use the following guide to install Python 2.7.x on centos:
 https://www.digitalocean.com/community/tutorials/how-to-set-up-python-2-7-6-and-3-3-3-on-centos-6-4
 
+Install FFmpeg
+https://www.vultr.com/docs/how-to-install-ffmpeg-on-centos
+
 ### MAKE VIRTUALENV ###
  - pip install virtualenv
  - virtualenv wBot
