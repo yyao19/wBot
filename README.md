@@ -1,5 +1,5 @@
 # WBOT: 微信聊天机器人 #
-[![py27][py27]
+![py27](https://img.shields.io/badge/python-2.7-ff69b4.svg)
 
 ## WECHAT BOT ／ 个人微信聊天机器人 ##
 
@@ -12,7 +12,7 @@
 Use the following guide to install Python 2.7.x on centos:
 https://www.digitalocean.com/community/tutorials/how-to-set-up-python-2-7-6-and-3-3-3-on-centos-6-4
 
-Install FFmpeg
+### INSTALL FFmpeg ###
 https://www.vultr.com/docs/how-to-install-ffmpeg-on-centos
 
 ### MAKE VIRTUALENV ###
@@ -28,9 +28,8 @@ pip install -r requirements.txt
 ```
 
 ### Make sure before running you ###
-```set the configurations in src/config.py
-```
-=== USER RUN GUIDE ===
+set the configurations in src/config.py
+
  TO RUN:
 ```source bin/activate
 python runWBot.py
